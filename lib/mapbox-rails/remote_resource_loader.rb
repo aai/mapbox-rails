@@ -20,11 +20,14 @@ class RemoteResourceLoader < Thor
     self.destination_root = 'vendor/assets'
     inside destination_root do
       run('sass-convert -F css -T sass stylesheets/mapbox.css stylesheets/mapbox.css.sass')
-      gsub_file 'stylesheets/mapbox.css.sass', '(layers.png)', "('layers.png')"
-      gsub_file 'stylesheets/mapbox.css.sass', '(marker-icon.png)', "('marker-icon.png')"
-      gsub_file 'stylesheets/mapbox.css.sass', '(marker-icon@2x.png)', "('marker-icon@2x.png')"
-      gsub_file 'stylesheets/mapbox.css.sass', '(marker-shadow.png)', "('marker-shadow.png')"
-      gsub_file 'stylesheets/mapbox.css.sass', ' url(images', ' image-url(assets'
+      gsub_file 'stylesheets/mapbox.css.sass', 'url(images/layers.png)', 
+        "image-url('assets/layers.png')"
+      gsub_file 'stylesheets/mapbox.css.sass', 'url(images/marker-icon.png)', 
+        "image-url('assets/marker-icon.png')"
+      gsub_file 'stylesheets/mapbox.css.sass', 'url(images/marker-icon@2x.png)', 
+        "image-url('assets/marker-icon@2x.png')"
+      gsub_file 'stylesheets/mapbox.css.sass', 'url(images/marker-shadow.png)', 
+        "image-url('assets/marker-shadow.png')"
     end
   end
 
