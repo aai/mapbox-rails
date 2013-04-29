@@ -1,4 +1,4 @@
-require "mapbox/rails/version"
+require "mapbox-rails/version"
 
 module Mapbox
   module Rails

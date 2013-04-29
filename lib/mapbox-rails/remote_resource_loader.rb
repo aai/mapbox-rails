@@ -11,7 +11,7 @@ class RemoteResourceLoader < Thor
     get "http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.ie.css", "stylesheets/mapbox.ie.css"
     get "http://api.tiles.mapbox.com/mapbox.js/v1.0.2/images/layers.png", "images/layers.png"
     get "http://api.tiles.mapbox.com/mapbox.js/v1.0.2/images/marker-icon.png", "images/marker-icon.png"
-    get "http://api.tiles.mapbox.com/mapbox.js/v1.0.2/images/marker-icon@2x.png", "images/marker-icon@2x.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v1.0.1/images/marker-icon@2x.png", "images/marker-icon@2x.png"
     get "http://api.tiles.mapbox.com/mapbox.js/v1.0.2/images/marker-shadow.png", "images/marker-shadow.png"
   end
 
