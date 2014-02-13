@@ -26,12 +26,6 @@ Add to your `app/assets/stylesheets/application.css`
 
     *= require mapbox
 
-and then conditionally require ```mapbox.ie``` as needed.
-
-    <!--[if lte IE 8]>
-      <%= stylesheet_link_tag    "mapbox.ie" %>
-    <![endif]-->
-
 ### Enable mapbox 
 
     <div id='map' class='dark'></div>
