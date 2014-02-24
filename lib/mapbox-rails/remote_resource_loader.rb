@@ -23,13 +23,13 @@ class RemoteResourceLoader < Thor
     inside destination_root do
       run('sass-convert -F css -T scss stylesheets/mapbox.css stylesheets/mapbox.css.scss')
       gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-000000.png)', 
-        "image-url('assets/icons-000000.png')"
+        "image-url('icons-000000.png')"
       gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-ffffff.png)', 
-        "image-url('assets/icons-ffffff.png')"
+        "image-url('icons-ffffff.png')"
       gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-000000@2x.png)', 
-        "image-url('assets/icons-000000@2x.png')"
+        "image-url('icons-000000@2x.png')"
       gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-ffffff@2x.png)', 
-        "image-url('assets/icons-ffffff@2x.png')"
+        "image-url('icons-ffffff@2x.png')"
     end
   end
 
