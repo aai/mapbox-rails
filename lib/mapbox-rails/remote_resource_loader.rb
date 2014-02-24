@@ -17,18 +17,18 @@ class RemoteResourceLoader < Thor
     get "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/icons-ffffff@2x.png", "images/icons-ffffff@2x.png"
   end
 
-  desc 'convert css to sass file', 'convert css to sass file by sass-convert'
+  desc 'convert css to scss file', 'convert css to scss file by sass-convert'
   def convert
     self.destination_root = 'vendor/assets'
     inside destination_root do
-      run('sass-convert -F css -T sass stylesheets/mapbox.css stylesheets/mapbox.css.sass')
-      gsub_file 'stylesheets/mapbox.css.sass', 'url(./images/icons-000000.png)', 
+      run('sass-convert -F css -T scss stylesheets/mapbox.css stylesheets/mapbox.css.scss')
+      gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-000000.png)', 
         "image-url('assets/icons-000000.png')"
-      gsub_file 'stylesheets/mapbox.css.sass', 'url(./images/icons-ffffff.png)', 
+      gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-ffffff.png)', 
         "image-url('assets/icons-ffffff.png')"
-      gsub_file 'stylesheets/mapbox.css.sass', 'url(./images/icons-000000@2x.png)', 
+      gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-000000@2x.png)', 
         "image-url('assets/icons-000000@2x.png')"
-      gsub_file 'stylesheets/mapbox.css.sass', 'url(./images/icons-ffffff@2x.png)', 
+      gsub_file 'stylesheets/mapbox.css.scss', 'url(./images/icons-ffffff@2x.png)', 
         "image-url('assets/icons-ffffff@2x.png')"
     end
   end
