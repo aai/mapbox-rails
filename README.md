@@ -10,7 +10,9 @@ The `mapbox-rails` gem integrates the `Chosen` with the Rails asset pipeline.
 
 Include `mapbox-rails` in Gemefile
 
-    gem 'mapbox-rails'
+```ruby
+gem 'mapbox-rails'
+```
 
 Then run `bundle install`
 
@@ -18,20 +20,26 @@ Then run `bundle install`
 
 Add to your `app/assets/javascripts/application.js` 
 
-    //= require mapbox.js
+```coffeescript
+//= require mapbox.js
+```
 
 ### Include mapbox stylesheet assets
 
 Add to your `app/assets/stylesheets/application.css`
 
-    *= require mapbox
+```scss
+*= require mapbox
+```
 
 ### Enable mapbox 
 
-    <div id='map' class='dark'></div>
-    <script type='text/javascript'>
-      var map = L.mapbox.map('map', 'examples.map-y7l23tes').setView([37.9, -77], 5);
-    </script>
+```html
+<div id='map' class='dark'></div>
+<script type='text/javascript'>
+  var map = L.mapbox.map('map', 'examples.map-y7l23tes').setView([37.9, -77], 5);
+</script>
+```
 
 ## Gem maintenance
 
