@@ -6,15 +6,15 @@ class RemoteResourceLoader < Thor
   desc 'fetch source files', 'fetch source files from the MapBox S3 storage'
   def fetch
     self.destination_root = 'app/assets'
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.uncompressed.js",      "javascripts/mapbox.js"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css",                  "stylesheets/mapbox.css"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/layers.png",           "images/layers.png"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/layers-2x.png",        "images/layers-2x.png"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/marker-icon.png",      "images/marker-icon.png"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/marker-icon-2x.png",   "images/marker-icon-2x.png"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/marker-shadow.png",    "images/marker-shadow.png"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/icons-000000@2x.png",  "images/icons-000000@2x.png"
-    get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/icons-ffffff@2x.png",  "images/icons-ffffff@2x.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/mapbox.uncompressed.js",      "javascripts/mapbox.js"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/mapbox.css",                  "stylesheets/mapbox.css"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/images/layers.png",           "images/layers.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/images/layers-2x.png",        "images/layers-2x.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/images/marker-icon.png",      "images/marker-icon.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/images/marker-icon-2x.png",   "images/marker-icon-2x.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/images/marker-shadow.png",    "images/marker-shadow.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/images/icons-000000@2x.png",  "images/icons-000000@2x.png"
+    get "http://api.tiles.mapbox.com/mapbox.js/v#{Mapbox::Rails::MAPBOX_VERSION}/images/icons-ffffff@2x.png",  "images/icons-ffffff@2x.png"
   end
 
   desc 'convert css to scss file', 'convert css to scss file by sass-convert'
