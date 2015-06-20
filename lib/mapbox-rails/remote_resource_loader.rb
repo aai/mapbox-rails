@@ -5,7 +5,7 @@ class RemoteResourceLoader < Thor
 
   desc 'fetch source files', 'fetch source files from the MapBox S3 storage'
   def fetch
-    self.destination_root = 'vendor/assets'
+    self.destination_root = 'app/assets'
     get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.uncompressed.js",      "javascripts/mapbox.js"
     get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css",                  "stylesheets/mapbox.css"
     get "http://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/layers.png",           "images/layers.png"
@@ -19,7 +19,7 @@ class RemoteResourceLoader < Thor
 
   desc 'convert css to scss file', 'convert css to scss file by sass-convert'
   def convert
-    self.destination_root = 'vendor/assets'
+    self.destination_root = 'app/assets'
     inside destination_root do
       run('sass-convert -F css -T scss stylesheets/mapbox.css stylesheets/mapbox.css.scss')
       gsub_file 'stylesheets/mapbox.css.scss', 'url(images/layers.png)',          "image-url('layers.png')"
@@ -34,7 +34,7 @@ class RemoteResourceLoader < Thor
 
   desc 'clean up useless files', 'clean up useless files'
   def cleanup
-    self.destination_root = 'vendor/assets'
+    self.destination_root = 'app/assets'
     remove_file 'stylesheets/mapbox.css'
   end
 end
