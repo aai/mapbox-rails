@@ -1,4 +1,5 @@
 # MapBox.js for rails asset pipeline
+[![Gem Version](https://badge.fury.io/rb/mapbox-rails.svg)](http://badge.fury.io/rb/mapbox-rails)
 
 [MapBox.js](https://github.com/mapbox/mapbox.js) is a library integrating MapBox maps.
 
