@@ -1,6 +1,6 @@
 module Mapbox
   module Rails
-    VERSION = '2.2.1'
-    MAPBOX_VERSION = '2.2.1'
+    VERSION = '2.2.2'
+    MAPBOX_VERSION = '2.2.2'
   end
 end
