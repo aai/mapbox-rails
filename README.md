@@ -26,10 +26,10 @@ Add to your `app/assets/javascripts/application.js`
 
 ### Include mapbox stylesheet assets
 
-Add to your `app/assets/stylesheets/application.css`
+Add to your `app/assets/stylesheets/application.css.scss`
 
 ```scss
-*= require mapbox
+@import "mapbox";
 ```
 
 ### Enable mapbox 
